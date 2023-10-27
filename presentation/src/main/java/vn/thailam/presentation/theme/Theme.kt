@@ -1,4 +1,4 @@
-package vn.thailam.androidbase.ui.theme
+package vn.thailam.presentation.theme
 
 import android.app.Activity
 import android.os.Build
