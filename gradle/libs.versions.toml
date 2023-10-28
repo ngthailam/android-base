@@ -1,0 +1,48 @@
+[versions]
+androidGradlePlugin = "8.1.2"
+kotlinPlugin = "1.7.20"
+daggerHiltPlugin = "2.44"
+
+ktx = "1.8.0"
+hilt = "2.44"
+coroutine = "1.7.3"
+room = "2.6.0"
+retrofit = "2.9.0"
+junit = "4.13.2"
+kotlinBom = "1.8.0"
+androidXLifecycle = "2.3.1"
+androidXActivity = "1.5.1"
+composeBom = "2022.10.00"
+androidXLifecycleVmCompose = "2.5.1"
+
+[libraries]
+androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
+androidxLifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidXLifecycle" }
+androidxLifecycle-vm-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidXLifecycleVmCompose" }
+androidxActivity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidXActivity" }
+androidxCompose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+coroutine-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutine" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlinBom" }
+
+androidxCompose-ui = { module = "androidx.compose.ui:ui" }
+androidxCompose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+androidxCompose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+androidxCompose-ui-material3 = { module = "androidx.compose.material3:material3" }
+androidxCompose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+androidxCompose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinPlugin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHiltPlugin" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinPlugin" }
