@@ -3,6 +3,7 @@ package vn.thailam.data.repositories
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 import vn.thailam.data.datasources.remote.ExampleRemoteDataSource
 import vn.thailam.data.datasources.local.ExampleLocalDataSource
 import vn.thailam.domain.models.Example
@@ -18,7 +19,7 @@ class ExampleRepositoryImpl @Inject constructor(
             .map { list -> list.map { it.toModel() } }
     }
 
-    override suspend fun refreshExamples() = with(Dispatchers.IO) {
+    override suspend fun refreshExamples() = withContext(Dispatchers.IO) {
         val histories = apiService.getExamples()
         localDataSource.saveExamples(histories)
     }
