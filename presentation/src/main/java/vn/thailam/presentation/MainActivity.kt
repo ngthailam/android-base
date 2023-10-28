@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import dagger.hilt.android.AndroidEntryPoint
-import vn.thailam.presentation.history.HistoryScreen
+import vn.thailam.presentation.example.ExampleScreen
 import vn.thailam.presentation.theme.AndroidBaseTheme
 
 @AndroidEntryPoint
@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    HistoryScreen()
+                    ExampleScreen()
                 }
             }
         }

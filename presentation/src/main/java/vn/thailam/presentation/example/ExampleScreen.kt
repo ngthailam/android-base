@@ -1,4 +1,4 @@
-package vn.thailam.presentation.history
+package vn.thailam.presentation.example
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -9,15 +9,15 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
-fun HistoryScreen(
+fun ExampleScreen(
     modifier: Modifier = Modifier,
-    historyViewModel: HistoryViewModel = viewModel()
+    exampleViewModel: ExampleViewModel = viewModel()
 ) {
-    val histories = historyViewModel.allHistories.collectAsState(initial = listOf())
+    val list = exampleViewModel.list.collectAsState(initial = listOf())
 
     LazyColumn {
-        items(histories.value) { history ->
-            Text(text = "History id=${history.id}")
+        items(list.value) { listItem ->
+            Text(text = "Example id=${listItem.id}")
         }
     }
 }

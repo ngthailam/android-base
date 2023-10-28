@@ -1,5 +1,5 @@
 package vn.thailam.domain.models
 
-data class History(
+data class Example(
     val id: String,
 )
