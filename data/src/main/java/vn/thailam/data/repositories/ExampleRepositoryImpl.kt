@@ -20,7 +20,14 @@ class ExampleRepositoryImpl @Inject constructor(
     }
 
     override suspend fun refreshExamples() = withContext(Dispatchers.IO) {
-        val histories = remoteDataSource.getExamples()
-        localDataSource.saveExamples(histories)
+        try {
+            val histories = remoteDataSource.getExamples()
+            localDataSource.saveExamples(histories)
+        } catch (t: Throwable) {
+            /**
+             * Do nothing for now
+             * TODO: When add ResultState, update this
+             */
+        }
     }
 }
