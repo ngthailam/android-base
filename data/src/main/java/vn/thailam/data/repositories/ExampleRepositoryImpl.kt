@@ -4,15 +4,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
-import vn.thailam.data.datasources.remote.ExampleRemoteDataSource
 import vn.thailam.data.datasources.local.ExampleLocalDataSource
+import vn.thailam.data.datasources.remote.ExampleRemoteDataSource
 import vn.thailam.domain.models.Example
 import vn.thailam.domain.repositories.ExampleRepository
 import javax.inject.Inject
 
 class ExampleRepositoryImpl @Inject constructor(
     private val localDataSource: ExampleLocalDataSource,
-    private val apiService: ExampleRemoteDataSource,
+    private val remoteDataSource: ExampleRemoteDataSource,
 ) : ExampleRepository {
     override fun getExamples(): Flow<List<Example>> {
         return localDataSource.getExamples()
@@ -20,7 +20,7 @@ class ExampleRepositoryImpl @Inject constructor(
     }
 
     override suspend fun refreshExamples() = withContext(Dispatchers.IO) {
-        val histories = apiService.getExamples()
+        val histories = remoteDataSource.getExamples()
         localDataSource.saveExamples(histories)
     }
 }
