@@ -49,6 +49,19 @@ android {
         }
     }
 
+    flavorDimensions += "default"
+
+    productFlavors {
+        create("dev") {
+            // Add flavor configurations here
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+        }
+        create("prod") {
+            // Add flavor configurations here
+            applicationIdSuffix = ""
+        }
+    }
 }
 
 // Allow references to generated code

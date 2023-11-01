@@ -1,13 +1,16 @@
 package vn.thailam.data.di
 
+import android.content.Context
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import vn.thailam.data.R
 import vn.thailam.data.datasources.local.AppLocalDatabase
 import vn.thailam.data.datasources.local.ExampleLocalDataSource
 import vn.thailam.data.datasources.remote.ExampleRemoteDataSource
@@ -49,6 +52,8 @@ abstract class ExampleDataModule {
         @Singleton
         @Provides
         fun provideRetrofitInstance(
+            @ApplicationContext
+            applicationContext: Context,
             okHttpClient: OkHttpClient,
         ): Retrofit {
             return Retrofit.Builder()
@@ -56,7 +61,7 @@ abstract class ExampleDataModule {
                 /**
                  * When app have flavours, put this into xml resource file based on flavours
                  */
-                .baseUrl("https://abc/")
+                .baseUrl(applicationContext.getString(R.string.base_url))
                 .client(okHttpClient)
                 .build()
         }
