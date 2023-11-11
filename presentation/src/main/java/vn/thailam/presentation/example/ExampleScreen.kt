@@ -17,7 +17,7 @@ fun ExampleScreen(
 
     LazyColumn {
         items(list.value) { listItem ->
-            Text(text = "Example id=${listItem.id}")
+            Text(text = "Example id=${listItem.title}")
         }
     }
 }

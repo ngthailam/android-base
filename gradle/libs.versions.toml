@@ -1,7 +1,10 @@
 [versions]
 androidGradlePlugin = "8.1.2"
+datastorePreferences = "1.0.0"
 kotlinPlugin = "1.7.20"
 daggerHiltPlugin = "2.44"
+protobufJavalite = "3.21.12"
+protobufPlugin = "0.9.1"
 
 ktx = "1.8.0"
 hilt = "2.44"
@@ -20,6 +23,8 @@ appcompat = "1.6.1"
 material = "1.10.0"
 
 [libraries]
+androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "datastorePreferences" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
 androidxLifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidXLifecycle" }
 androidxLifecycle-vm-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidXLifecycleVmCompose" }
@@ -28,6 +33,7 @@ androidxCompose-bom = { group = "androidx.compose", name = "compose-bom", versio
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 coroutine-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutine" }
+protobuf-javalite = { module = "com.google.protobuf:protobuf-javalite", version.ref = "protobufJavalite" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
@@ -54,3 +60,5 @@ android-library = { id = "com.android.library", version.ref = "androidGradlePlug
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinPlugin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHiltPlugin" }
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinPlugin" }
+protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
+

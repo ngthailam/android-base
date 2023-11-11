@@ -11,12 +11,14 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import vn.thailam.data.R
-import vn.thailam.data.datasources.local.AppLocalDatabase
+import vn.thailam.data.datasources.local.room.AppLocalDatabase
 import vn.thailam.data.datasources.local.ExampleLocalDataSource
+import vn.thailam.data.datasources.local.datastore.ExampleDataStore
 import vn.thailam.data.datasources.remote.ExampleRemoteDataSource
 import vn.thailam.data.datasources.remote.interceptors.HeaderInterceptor
 import vn.thailam.data.repositories.ExampleRepositoryImpl
 import vn.thailam.domain.repositories.ExampleRepository
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -37,8 +39,16 @@ abstract class ExampleDataModule {
          * and core module doesn't need to know about [ExampleLocalDataSource]
          */
         @Provides
-        fun provideExampleLocalDataSource(db: AppLocalDatabase): ExampleLocalDataSource {
+        @Named("ExampleLocalDataSourceRoom")
+        fun provideExampleLocalDataSourceRoom(db: AppLocalDatabase): ExampleLocalDataSource {
             return db.exampleDao()
+        }
+
+        @Provides
+        @Singleton
+        @Named("ExampleLocalDataSourceDataStore")
+        fun provideExampleLocalDataSourceDataStore(impl: ExampleDataStore): ExampleLocalDataSource {
+            return impl
         }
 
         @Singleton

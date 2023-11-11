@@ -1,9 +1,9 @@
-package vn.thailam.data.datasources.local
+package vn.thailam.data.datasources.local.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import vn.thailam.data.datasources.local.AppLocalDatabase.Companion.VERSION
-import vn.thailam.data.datasources.local.dao.ExampleDao
+import vn.thailam.data.datasources.local.room.AppLocalDatabase.Companion.VERSION
+import vn.thailam.data.datasources.local.room.dao.ExampleDao
 import vn.thailam.data.models.ExampleEntity
 
 

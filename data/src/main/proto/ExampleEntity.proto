@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "vn.thailam.data.datasources.local.datastore.entity";
+option java_multiple_files = true;
+
+message ExampleEntityProto {
+  string id = 1;
+}
+
+message ExampleEntityProtoWrapper {
+  repeated ExampleEntityProto exampleEntities  = 2; // repeated => list
+}
