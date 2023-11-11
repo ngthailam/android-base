@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kapt)
+    alias(libs.plugins.protobuf)
 }
 
 android {
@@ -56,8 +57,29 @@ dependencies {
 
     // Testing
     testImplementation(libs.junit)
+
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.datastore)
+    implementation(libs.protobuf.javalite)
+
 }
 
 kapt {
     correctErrorTypes = true
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.21.12"
+    }
+
+    generateProtoTasks {
+        all().forEach { task ->
+            task.builtins {
+                create("java") {
+                    option("lite")
+                }
+            }
+        }
+    }
 }

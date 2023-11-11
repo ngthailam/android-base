@@ -1,4 +1,4 @@
-package vn.thailam.data.datasources.local.dao
+package vn.thailam.data.datasources.local.room.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -14,5 +14,5 @@ interface ExampleDao : ExampleLocalDataSource {
     override fun getExamples(): Flow<List<ExampleEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    override fun saveExamples(histories: List<ExampleEntity>)
+    override suspend fun saveExamples(examples: List<ExampleEntity>)
 }

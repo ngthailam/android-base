@@ -9,8 +9,10 @@ import vn.thailam.data.datasources.remote.ExampleRemoteDataSource
 import vn.thailam.domain.models.Example
 import vn.thailam.domain.repositories.ExampleRepository
 import javax.inject.Inject
+import javax.inject.Named
 
 class ExampleRepositoryImpl @Inject constructor(
+    @Named("ExampleLocalDataSourceRoom")
     private val localDataSource: ExampleLocalDataSource,
     private val remoteDataSource: ExampleRemoteDataSource,
 ) : ExampleRepository {
