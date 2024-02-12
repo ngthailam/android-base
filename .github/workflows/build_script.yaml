@@ -24,7 +24,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo "Setting up JDK"
-      - name: set up JDK 17
+      - name: Check commit message
+        uses: gsactions/commit-message-checker@v2
+        with:
+            pattern: '^(feat|chore|test|refactor|fix|enhance)\([0-9]+\):.*'
+            flags: 'gm'
+            error: 'Your first line has to contain a commit type like "[BUGFIX]".'
+      - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           java-version: '17'
