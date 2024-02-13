@@ -45,6 +45,8 @@ dependencies {
     implementation(libs.androidxCompose.ui.graphics)
     implementation(libs.androidxCompose.ui.tooling.preview)
     implementation(libs.androidxCompose.ui.material3)
+    implementation(libs.androidx.navigation.runtime)
+    implementation(libs.androidx.navigation.hilt)
     debugImplementation(libs.androidxCompose.ui.tooling)
     debugImplementation(libs.androidxCompose.ui.test.manifest)
 
