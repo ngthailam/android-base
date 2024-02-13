@@ -5,6 +5,7 @@ kotlinPlugin = "1.7.20"
 daggerHiltPlugin = "2.44"
 protobufJavalite = "3.21.12"
 protobufPlugin = "0.9.1"
+ktlintPlugin = "11.1.0"
 
 ktx = "1.8.0"
 hilt = "2.44"
@@ -61,4 +62,5 @@ kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinPlugin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHiltPlugin" }
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinPlugin" }
 protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlintPlugin" }
 

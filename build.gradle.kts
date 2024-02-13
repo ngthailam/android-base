@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.kapt) apply false
     alias(libs.plugins.protobuf) apply false
-    id("org.jlleitschuh.gradle.ktlint") version "11.1.0"
+    alias(libs.plugins.ktlint)
 }
 
 allprojects {
