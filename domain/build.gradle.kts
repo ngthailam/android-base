@@ -24,7 +24,6 @@ android {
     }
 }
 
-
 dependencies {
     implementation(libs.androidx.ktx)
     implementation(libs.coroutine.core)

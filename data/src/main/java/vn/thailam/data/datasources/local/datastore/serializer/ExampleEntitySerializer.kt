@@ -17,7 +17,6 @@ object ExampleEntitySerializer : Serializer<ExampleEntityProtoWrapper> {
         } catch (exception: InvalidProtocolBufferException) {
             throw CorruptionException("Cannot read proto.", exception)
         }
-
     }
 
     override suspend fun writeTo(t: ExampleEntityProtoWrapper, output: OutputStream) {

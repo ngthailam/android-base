@@ -6,7 +6,6 @@ import vn.thailam.data.datasources.local.room.AppLocalDatabase.Companion.VERSION
 import vn.thailam.data.datasources.local.room.dao.ExampleDao
 import vn.thailam.data.models.ExampleEntity
 
-
 @Database(entities = [ExampleEntity::class], version = VERSION)
 abstract class AppLocalDatabase : RoomDatabase() {
     abstract fun exampleDao(): ExampleDao
