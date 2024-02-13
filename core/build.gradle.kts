@@ -9,10 +9,5 @@ android {
 
     defaultConfig {
         minSdk = 24
-
     }
-}
-
-dependencies {
-
 }
