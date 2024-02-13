@@ -6,6 +6,10 @@ import androidx.room.PrimaryKey
 import vn.thailam.data.models.ExampleEntity.Companion.TBL_NAME
 import vn.thailam.domain.models.Example
 
+/**
+ * @note: If you only use protobuf and NO room,
+ * you can use directly proto entity (like UserEntity.proto)
+ */
 @Entity(tableName = TBL_NAME)
 data class ExampleEntity(
     @PrimaryKey

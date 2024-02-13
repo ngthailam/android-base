@@ -54,6 +54,8 @@ androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-navigation-runtime = { group = "androidx.navigation", name = "navigation-compose", version = "2.7.7" }
+androidx-navigation-hilt = { group = "androidx.hilt", name = "hilt-navigation-compose", version = "1.0.0" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

@@ -13,10 +13,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 import vn.thailam.data.R
 import vn.thailam.data.datasources.local.room.AppLocalDatabase
 import vn.thailam.data.datasources.local.ExampleLocalDataSource
+import vn.thailam.data.datasources.local.UserLocalDataSource
 import vn.thailam.data.datasources.local.datastore.ExampleDataStore
+import vn.thailam.data.datasources.local.datastore.UserDataStore
 import vn.thailam.data.datasources.remote.ExampleRemoteDataSource
 import vn.thailam.data.datasources.remote.interceptors.HeaderInterceptor
+import vn.thailam.data.repositories.UserRepositoryImpl
 import vn.thailam.data.repositories.ExampleRepositoryImpl
+import vn.thailam.domain.repositories.UserRepository
 import vn.thailam.domain.repositories.ExampleRepository
 import javax.inject.Named
 import javax.inject.Singleton
@@ -28,6 +32,12 @@ abstract class ExampleDataModule {
     abstract fun bindsHistoryRepository(
         impl: ExampleRepositoryImpl
     ): ExampleRepository
+
+    @Binds
+    abstract fun bindUserLocalDataSource(impl: UserDataStore): UserLocalDataSource
+
+    @Binds
+    abstract fun bindAuthRepository(impl: UserRepositoryImpl): UserRepository
 
     companion object {
         /**

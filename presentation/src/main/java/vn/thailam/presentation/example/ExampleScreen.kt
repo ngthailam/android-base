@@ -6,12 +6,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun ExampleScreen(
     modifier: Modifier = Modifier,
-    exampleViewModel: ExampleViewModel = viewModel()
+    exampleViewModel: ExampleViewModel = hiltViewModel()
 ) {
     val list = exampleViewModel.list.collectAsState(initial = listOf())
 
